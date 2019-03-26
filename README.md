@@ -1,4 +1,4 @@
-[![Build Status](https://dev.azure.com/brunoborges-github/azure-gradle-plugins.svg?style=flat-square&label=build&branch=master)](https://dev.azure.com/brunoborges-github/azure-gradle-plugins)
+[![Build Status](https://dev.azure.com/brunoborges-github/azure-gradle-plugins/_apis/build/status/brunoborges.azure-gradle-plugins?branchName=master)](https://dev.azure.com/brunoborges-github/azure-gradle-plugins/_build/latest?definitionId=5&branchName=master)
 # azure-gradle-plugins
 
 - [Compiling plugins locally](#compiling-plugins)
