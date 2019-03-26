@@ -1,7 +1,7 @@
-package lenala.azure.functions;
+package com.microsoft.azure.functions;
 
-import lenala.azure.functions.annotation.*;
-import lenala.azure.functions.ExecutionContext;
+import com.microsoft.azuret.azuret.azure.functions.annotation.*;
+import com.microsoft.azure.functions.ExecutionContext;
 
 /**
  * Hello function with HTTP Trigger.

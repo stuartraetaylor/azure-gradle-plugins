@@ -11,16 +11,16 @@ buildscript {
     }
     dependencies {
         classpath("com.microsoft.azure.functions:azure-functions-java-library:1.0.0-beta-4")
-        classpath group: 'lenala.azure', name: 'azure-functions-gradle-plugin',
+        classpath group: 'com.microsoft.azure', name: 'azure-functions-gradle-plugin',
                 version: '1.0-SNAPSHOT'
     }
 }
 
 apply plugin: 'java'
 apply plugin: 'maven'
-apply plugin: 'lenala.azure.azurefunctions'
+apply plugin: 'com.microsoft.azure.azurefunctions'
 
-import lenala.azure.gradle.functions.*;
+import com.microsoft.azure.gradle.functions.*;
 
 dependencies {
     compile 'com.microsoft.azure.functions:azure-functions-java-library:1.0.0-beta-4'

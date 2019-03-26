@@ -69,8 +69,8 @@ subprojects {
     }
 
     pluginBundle {
-        website     = 'https://github.com/lenala/azure-gradle-plugins'
-        vcsUrl      = 'https://github.com/lenala/azure-gradle-plugins.git'
+        website     = 'https://github.com/brunoborges/azure-gradle-plugins'
+        vcsUrl      = 'https://github.com/brunoborges/azure-gradle-plugins.git'
         description = project.projectDescription
         tags        = ['azure']
 

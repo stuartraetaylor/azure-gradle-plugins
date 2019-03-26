@@ -95,7 +95,7 @@ java -jar todoapp.jar
 Install a SNAPSHOT version of the Gradle Plugin for Azure Web Apps:
 
 ```bash
-git clone https://github.com/lenala/azure-gradle-plugins.git
+git clone https://github.com/brunoborges/azure-gradle-plugins.git
 cd azure-webapp-gradle-plugin
 ./gradlew install
 ```

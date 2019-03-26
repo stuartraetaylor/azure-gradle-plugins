@@ -1,4 +1,4 @@
-[![Build Status](https://travis-ci.org/lenala/azure-gradle-plugins.svg?style=flat-square&label=build&branch=master)](https://travis-ci.org/lenala/azure-gradle-plugins)
+[![Build Status](https://dev.azure.com/brunoborges-github/azure-gradle-plugins.svg?style=flat-square&label=build&branch=master)](https://dev.azure.com/brunoborges-github/azure-gradle-plugins)
 # azure-gradle-plugins
 
 - [Compiling plugins locally](#compiling-plugins)
@@ -35,7 +35,7 @@ gradlew.bat publishToMavenLocal
 
 ```
 plugins {
-  id "lenala.azure.azurewebapp" version "1.0"
+  id "com.microsoft.azure.azurewebapp" version "1.0"
 }
 ```
 
@@ -243,7 +243,7 @@ gradlew.bat azureWebappDeploy
 # Azure Functions plugin
 ```
 plugins {
-  id "lenala.azure.azurefunctions" version "1.0"
+  id "com.microsoft.azure.azurefunctions" version "1.0"
 }
 ```
 

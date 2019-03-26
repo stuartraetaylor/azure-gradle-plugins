@@ -1,8 +1,8 @@
-package lenala.azure;
+package com.microsoft.azure;
 
 import java.util.*;
-import lenala.azure.functions.annotation.*;
-import lenala.azure.functions.*;
+import com.microsoft.azure.functions.annotation.*;
+import com.microsoft.azure.functions.*;
 
 /**
  * Azure Functions with HTTP Trigger.

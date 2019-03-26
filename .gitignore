@@ -2,8 +2,15 @@
 .idea/
 *.ipr
 *.iws
+*.class
 .idea_modules/
 
 .gradle
 build/
 !gradle-wrapper.jar
+
+bin
+**/bin
+
+azure-webapp-gradle-plugin/bin/**/*
+ azure-functions-gradle-plugin/bin/**/*

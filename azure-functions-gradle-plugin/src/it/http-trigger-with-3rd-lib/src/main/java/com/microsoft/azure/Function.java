@@ -1,10 +1,10 @@
-package lenala.azure;
+package com.microsoft.azure;
 
 import java.util.*;
 import java.util.logging.Logger;
 import java.util.logging.Level;
-import lenala.azure.functions.annotation.*;
-import lenala.azure.functions.*;
+import com.microsoft.azure.functions.annotation.*;
+import com.microsoft.azure.functions.*;
 import com.microsoft.itlib.AbstractSigner;
 import com.microsoft.itlib.ConcreteSigner;
 
