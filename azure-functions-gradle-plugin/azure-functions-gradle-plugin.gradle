@@ -25,7 +25,6 @@
 dependencies {
     compile "com.microsoft.azure:azure-storage:$azureStorageVersion"
     compile "com.microsoft.azure.functions:azure-functions-java-library:$azureFunctionsVersion"
-    compile "org.reflections:reflections:$reflectionsVersion"
 }
 
 task createClasspathManifest {
