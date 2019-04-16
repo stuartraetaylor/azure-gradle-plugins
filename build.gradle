@@ -30,6 +30,7 @@ plugins {
 
 buildScan {
     termsOfServiceAgree = 'yes'
+    publishAlways()
 }
 
 config {
