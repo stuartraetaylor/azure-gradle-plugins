@@ -159,7 +159,6 @@ subprojects {
             compile "commons-net:commons-net:$commonsNetVersion"
             compile "commons-io:commons-io:$commonsIoVersion"
             compile "org.zeroturnaround:zt-zip:$ztZipVersion"
-            compile "org.reflections:reflections:$reflectionsVersion"
 
             testCompile gradleTestKit()
             testCompile "junit:junit:$junitVersion"
