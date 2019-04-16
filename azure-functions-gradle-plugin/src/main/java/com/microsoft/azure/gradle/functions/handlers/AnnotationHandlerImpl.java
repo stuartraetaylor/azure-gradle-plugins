@@ -23,19 +23,20 @@
  */
 package com.microsoft.azure.gradle.functions.handlers;
 
+import com.microsoft.azure.functions.annotation.FunctionName;
+import com.microsoft.azure.functions.annotation.HttpTrigger;
+import com.microsoft.azure.functions.annotation.StorageAccount;
 import com.microsoft.azure.gradle.functions.bindings.BaseBinding;
 import com.microsoft.azure.gradle.functions.bindings.BindingFactory;
 import com.microsoft.azure.gradle.functions.bindings.HttpBinding;
 import com.microsoft.azure.gradle.functions.bindings.StorageBaseBinding;
 import com.microsoft.azure.gradle.functions.configuration.FunctionConfiguration;
-import com.microsoft.azure.functions.annotation.FunctionName;
-import com.microsoft.azure.functions.annotation.HttpTrigger;
-import com.microsoft.azure.functions.annotation.StorageAccount;
+import io.github.classgraph.ClassGraph;
+import io.github.classgraph.ClassInfo;
+import io.github.classgraph.MethodInfo;
+import io.github.classgraph.ScanResult;
 import org.apache.commons.lang3.StringUtils;
 import org.gradle.api.logging.Logger;
-import org.reflections.Reflections;
-import org.reflections.scanners.MethodAnnotationsScanner;
-import org.reflections.util.ConfigurationBuilder;
 
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -45,6 +46,7 @@ import java.net.URLClassLoader;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.HashMap;
+import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Map;
 import java.util.Optional;
@@ -61,12 +63,24 @@ public class AnnotationHandlerImpl implements AnnotationHandler {
 
     @Override
     public Set<Method> findFunctions(final URL url) {
-        return new Reflections(
-                new ConfigurationBuilder()
-                        .addUrls(url)
-                        .setScanners(new MethodAnnotationsScanner())
-                        .addClassLoader(getClassLoader(url)))
-                .getMethodsAnnotatedWith(FunctionName.class);
+        Set<Method> methods = new LinkedHashSet<>();
+        
+        try (ScanResult scanResult = new ClassGraph()
+            .addClassLoader(getClassLoader(url))
+            .enableAnnotationInfo()
+            .enableMethodInfo()
+            .scan()) {
+            String annotationName = FunctionName.class.getName();
+            for (ClassInfo classInfo : scanResult.getClassesWithMethodAnnotation(annotationName)) {
+                for (MethodInfo methodInfo : classInfo.getMethodInfo()) {
+                    if (methodInfo.hasAnnotation(annotationName)) {
+                        methods.add(methodInfo.loadClassAndGetMethod());
+                    }
+                }
+            }
+        }
+
+        return methods;
     }
 
     private ClassLoader getClassLoader(final URL url) {
