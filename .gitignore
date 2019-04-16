@@ -4,13 +4,17 @@
 *.iws
 *.class
 .idea_modules/
+out/
 
 .gradle
 build/
-!gradle-wrapper.jar
 
 bin
 **/bin
 
 azure-webapp-gradle-plugin/bin/**/*
- azure-functions-gradle-plugin/bin/**/*
+azure-functions-gradle-plugin/bin/**/*
+
+.settings/
+.classpath
+.project
