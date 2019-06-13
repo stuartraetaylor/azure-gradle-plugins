@@ -96,6 +96,8 @@ public class HandlerFactoryImpl extends HandlerFactory {
                 throw new GradleException(String.format(UNKNOWN_VALUE_TEMPLATE, "deployment.type"));
             case WAR:
                 return new WarArtifactHandlerImpl(task);
+            case EAR:
+                return new EarArtifactHandlerImpl(task);
             case ZIP:
                 return new ZipArtifactHandlerImpl(task);
             case JAR:

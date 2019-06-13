@@ -32,6 +32,7 @@ import java.util.List;
 public class Deployment {
     private DeploymentType type;
     private String warFile;
+    private String earFile;
     private String jarFile;
     private String contextPath;
     private String deploymentSlot;
@@ -43,6 +44,10 @@ public class Deployment {
 
     public String getWarFile() {
         return this.warFile;
+    }
+
+    public String getEarFile() {
+        return this.earFile;
     }
 
     public String getJarFile() {
