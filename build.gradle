@@ -94,6 +94,8 @@ config {
                 id = 'MIT'
             }
         }
+
+        enabled = false
     }
 
     bintray { enabled = false }

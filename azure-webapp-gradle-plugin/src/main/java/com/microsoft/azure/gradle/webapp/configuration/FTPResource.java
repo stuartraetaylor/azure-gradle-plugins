@@ -29,6 +29,13 @@ public class FTPResource {
     private String sourcePath;
     private String targetPath;
 
+    public FTPResource(String sourcePath, String targetPath) {
+        this.sourcePath = sourcePath;
+        this.targetPath = targetPath;
+    }
+
+    public FTPResource() { }
+
     public String getSourcePath() {
         return sourcePath;
     }

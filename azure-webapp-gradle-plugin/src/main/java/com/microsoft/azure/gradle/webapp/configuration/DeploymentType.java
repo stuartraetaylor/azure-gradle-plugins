@@ -27,7 +27,8 @@ public enum DeploymentType {
     NONE,
     FTP,
     WAR,
+    EAR,
     ZIP,
     JAR,
-    UNKNOWN;
+    UNKNOWN
 }
